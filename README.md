@@ -1,16 +1,65 @@
-# React + Vite
+💗 Crispy – Pixel Music Player
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A cute pixel-art music player for the browser, built with React and Vite. A vinyl record spins on a little turntable while your songs play.
 
-Currently, two official plugins are available:
+Crispy pink theme
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Screenshots
+Pink theme	Settings menu	Blue theme
+<img src="screenshots/pink.png" width="250">	<img src="screenshots/menu.png" width="250">	<img src="screenshots/blue.png" width="250">
+Features
+Play, pause, next and previous controls
+Spinning vinyl record, and a needle that lowers when music plays
+Progress bar with a star handle you can drag to seek
+Scrolling title for long song names
+Pink and blue themes, switched from the settings (⚙) menu
+Pixel-style window with a bow, hearts and a night-window scene, all drawn with SVG and CSS
+Built With
+React
+Vite
+JavaScript, HTML5, CSS
+SVG for the turntable scene
+Getting Started
 
-## React Compiler
+You need Node.js installed.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+bash
+git clone https://github.com/YOURUSERNAME/crispy-player.git
+cd crispy-player
+npm install
+npm run dev
 
-## Expanding the Oxlint configuration
+Then open http://localhost:5173 in your browser.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Adding Your Own Music
+
+The music files are not included in this repo.
+
+Create a folder public/music.
+Copy your .mp3 files into it.
+Open src/App.jsx and edit the tracks list at the top:
+jsx
+const tracks = [
+  { title: "Song Name", artist: "Artist", url: "/music/your-file.mp3", art: "#c0475a" },
+];
+
+The url must match the file name exactly. art is the color of the album square.
+
+Project Structure
+crispy-player/
+├─ public/music/     # your mp3 files (not in the repo)
+├─ screenshots/      # images used in this README
+├─ src/
+│  ├─ App.jsx        # player logic and layout
+│  ├─ App.css        # themes and pixel styling
+│  └─ index.css      # page background and font
+└─ index.html
+Roadmap
+ Playlist view to jump to any song
+ Shuffle and repeat
+ Volume slider
+ Desktop app with Electron
+ Spotify / Apple Music playlists
+Author
+
+Made by Manasa Vernekar.
